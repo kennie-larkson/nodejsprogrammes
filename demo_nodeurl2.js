@@ -4,6 +4,7 @@ const url = require('url');
 
 
 http.createServer((req, res)=>{
+    console.log(req.url);
     const q = url.parse(req.url,true);
     const filename = "."+ q.pathname;
     fs.readFile(filename,(err,data)=>{
